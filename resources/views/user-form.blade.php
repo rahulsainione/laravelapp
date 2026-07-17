@@ -9,14 +9,14 @@
     <form method="POST" action="/submit-form">
         @csrf
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" value="{{old('name')}}" class="@error('name') is-invalid @enderror">
 
         @error('name')
             <x-user-massage msg="{{$message}}" class="error" />
         @enderror
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" value="{{old('email')}}">
            @error('email')
             <x-user-massage msg="{{$message}}" class="error" />
         @enderror
@@ -29,3 +29,10 @@
         <button type="submit">Submit</button>
     </form>
 </div>
+
+
+<style>
+    .is-invalid {
+        border-color: red;
+    }
+</style>    

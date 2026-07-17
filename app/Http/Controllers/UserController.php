@@ -39,7 +39,7 @@ class UserController extends Controller
     // );
 
      $req->validate([
-        'name' => 'required|min:5|max:10',
+        'name' => 'required|min:5|max:10|uppercase',
         'email' => 'required|email'
     ],[
         'name.min' => 'Name must be at least 5 characters'
