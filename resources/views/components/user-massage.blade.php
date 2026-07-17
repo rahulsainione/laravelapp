@@ -1,4 +1,4 @@
-<div>
+<div style="margin: 20px 0px;">
    <span class="{{$class}}">{{$msg}}</span>
 </div>
 
@@ -9,14 +9,14 @@
     color: green;
     background-color: lightgreen;
     padding:10px;
-    margin:10px;
+   
 }
 
 .error { 
     color: red;
     background-color: lightcoral;
     padding:10px;
-    margin:10px;
+  
 }
 
 

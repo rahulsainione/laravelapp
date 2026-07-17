@@ -24,6 +24,30 @@ class UserController extends Controller
     }
 
     function userFormsubmit(Request $req){ 
+
+    // $req->validate([
+    //     'name' => 'required|min:5|max:10',
+    //     'email' => 'required|email'
+    // ],[
+    //     name.min => 'Name must be at least 5 characters'
+    // ],[
+    //     'name' => 'User Name',
+    //     'email' => 'User Email'
+    // ]
+
+
+    // );
+
+     $req->validate([
+        'name' => 'required|min:5|max:10',
+        'email' => 'required|email'
+    ],[
+        'name.min' => 'Name must be at least 5 characters'
+    ]
+
+
+    );
+
     print_r($req->all());
 
 //    echo "Name: " . $req->input('name') . "<br>";
