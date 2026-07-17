@@ -13,8 +13,14 @@ Route::get('/about/{name}', function ($name) {
     return view('about', ['name'=>$name]);
 });
 
+Route::get('/user-form', function () {
+    return view('user-form');
+});
+
 Route::get('/user/{name}',[UserController::class,'getUser']);
 
 Route::get('/admin/{name}',[UserController::class,'adminLogin']);
+
+Route::post('/submit-form',[UserController::class,'userFormsubmit']);
 
 
