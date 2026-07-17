@@ -24,10 +24,10 @@ class UserController extends Controller
     }
 
     function userFormsubmit(Request $req){ 
-   //  print_r($req->all());
+    print_r($req->all());
 
-   echo "Name: " . $req->input('name') . "<br>";
-   echo "Email: " . $req->input('email') . "<br>";
+//    echo "Name: " . $req->input('name') . "<br>";
+//    echo "Email: " . $req->input('email') . "<br>";
 
     }
 }
