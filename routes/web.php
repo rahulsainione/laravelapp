@@ -23,4 +23,6 @@ Route::get('/admin/{name}',[UserController::class,'adminLogin']);
 
 Route::post('/submit-form',[UserController::class,'userFormsubmit']);
 
+Route::view('url','url');
+
 
