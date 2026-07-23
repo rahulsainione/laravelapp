@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Routerdemo;
+use App\Http\Middleware\AgeChecker;
+use App\Http\Middleware\CountryCheck;
 
 
 Route::get('/', function () {
@@ -25,7 +27,11 @@ Route::get('/admin/{name}',[UserController::class,'adminLogin']);
 
 Route::post('/submit-form',[UserController::class,'userFormsubmit']);
 
-Route::view('url','url')->name('routedemo')->middleware('check1');
+// Route::view('url','url')->name('routedemo')->middleware('check1');
+
+Route::view('url','url')->name('routedemo')->middleware([AgeChecker::class,CountryCheck::class]);
+
+Route::view('url1','welcome')->middleware(CountryCheck::class);
 
 Route::get('demourl/{name}',[Routerdemo::class, 'testdemo']);
 
