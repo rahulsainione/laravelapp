@@ -35,6 +35,12 @@ Route::prefix('student')->group(function (){
     Route::view('routeprefix2','routeprefix2');
 });
 
+// Route::middleware(['check1'])->group(function () {
+//     Route::view('url','url')->name('routedemo');
+//     Route::view('url1','url1')->name('routedemo1');
+//     Route::view('url2','url2')->name('routedemo2');
+// });
+
 
 // grouping routes using controller
 /*
