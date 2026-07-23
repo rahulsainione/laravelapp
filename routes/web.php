@@ -25,7 +25,7 @@ Route::get('/admin/{name}',[UserController::class,'adminLogin']);
 
 Route::post('/submit-form',[UserController::class,'userFormsubmit']);
 
-Route::view('url','url')->name('routedemo');
+Route::view('url','url')->name('routedemo')->middleware('check1');
 
 Route::get('demourl/{name}',[Routerdemo::class, 'testdemo']);
 
