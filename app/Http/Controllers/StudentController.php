@@ -9,6 +9,8 @@ class StudentController extends Controller
     //
     function getStudent(){
         $student = 'App\Models\Student';
-        return $student::all();
+        // return $student::all();
+        return view('studentlist', ['students'=>$student::all()]);
+
     }
 }
