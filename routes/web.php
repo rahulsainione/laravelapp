@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Routerdemo;
 use App\Http\Middleware\AgeChecker;
 use App\Http\Middleware\CountryCheck;
@@ -12,6 +13,8 @@ use App\Http\Controllers\UserTest; // db users
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/student',[StudentController::class,'getStudent']);
 Route::get('usertest',[UserTest::class,'users']);
 
 Route::get('/about/{name}', function ($name) {
