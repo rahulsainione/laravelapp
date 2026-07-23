@@ -8,8 +8,15 @@ class StudentController extends Controller
 {
     //
     function getStudent(){
+
+
+        $data = new \App\Models\Student;
+        echo $data->dummyfunction();
+
         $student = 'App\Models\Student';
-        // return $student::all();
+
+
+      
         return view('studentlist', ['students'=>$student::all()]);
 
     }
