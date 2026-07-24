@@ -39,7 +39,7 @@ class UserTest extends Controller
 
         */
 
-
+/*
         $userUpdate = DB::table('users')->where([
             'name'=>'test',
             'email'=>'updated@gmail.com'
@@ -51,7 +51,16 @@ class UserTest extends Controller
             return "User Updated";
         } else {
             return "User Not Updated";
-        }
+        } */
 
+
+
+            $userDelete = DB::table('users')->where('name','test')->delete();
+
+            if($userDelete){
+                return "User Deleted";
+            } else {
+                return "User Not Deleted";
+            }
     }
     }
