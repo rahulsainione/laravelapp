@@ -76,3 +76,5 @@ Route::controller(UserController::class)->group(function () {
 Route::view('login','login');
 Route::post('login',[UserLoginController::class,'login']);   
 Route::view('profile','profile');
+
+Route::get('logout',[UserLoginController::class,'logout']);
