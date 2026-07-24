@@ -18,6 +18,10 @@ Route::get('/', function () {
 Route::get('/student',[StudentController::class,'getStudent']);
 Route::get('usertest',[UserTest::class,'users']);
 
+// Route::any('studentapi',[UserApiController::class,'getuser']); // for any request method
+// Route::match(['get','post'],'studentapi',[UserApiController::class,'getuser']); // for get and post request method
+
+
 Route::get('studentapi',[UserApiController::class,'getuser']);
 
 Route::get('/about/{name}', function ($name) {
