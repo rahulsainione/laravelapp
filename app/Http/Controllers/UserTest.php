@@ -11,7 +11,13 @@ class UserTest extends Controller
 
     function users(){
         
-        $users = DB::select("select * from users");
+//         $users = DB::select("select * from users");
+        $query = DB::table('users')->where('phone', '23232');
+
+     //  dd($query->toRawSql());
+
+        $users = $query->get();
+
         return view('usertest', ['users'=>$users]);
     }
 }
