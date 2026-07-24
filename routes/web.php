@@ -9,6 +9,7 @@ use App\Http\Middleware\AgeChecker;
 use App\Http\Middleware\CountryCheck;
 use App\Http\Controllers\UserTest; // db users
 use App\Http\Controllers\UserApiController; // api users
+use App\Http\Controllers\UserLoginController; // api users
 
 
 Route::get('/', function () {
@@ -68,3 +69,10 @@ Route::controller(UserController::class)->group(function () {
 });
 
 */
+
+
+// for login and session 
+
+Route::view('login','login');
+Route::post('login',[UserLoginController::class,'login']);   
+Route::view('profile','profile');
