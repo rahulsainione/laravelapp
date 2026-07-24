@@ -21,7 +21,7 @@ class UserTest extends Controller
         return view('usertest', ['users'=>$users]);
         */
 
-
+/*
         $userInsert = DB::table('users')->insert(
             [
                 'name'=>'test',
@@ -36,5 +36,22 @@ class UserTest extends Controller
     } else {
             return "User Not Inserted";
         }
+
+        */
+
+
+        $userUpdate = DB::table('users')->where([
+            'name'=>'test',
+            'email'=>'updated@gmail.com'
+        ])->update([
+                'email'=>'updateds@gmail.com',
+            ]);
+
+        if($userUpdate){
+            return "User Updated";
+        } else {
+            return "User Not Updated";
+        }
+
     }
- }
+    }
